@@ -19,7 +19,6 @@ class User(UserMixin, db.Model):
     bio = db.Column(db.String(255))
     profile_pic_path = db.Column(db.String())
     password_hash = db.Column(db.String(255))
-    pass_secure = db.Column(db.String(255))
     pitch = db.relationship('Pitch',backref = 'users',lazy="dynamic")
 
     def save_comment(self):
@@ -39,13 +38,14 @@ class User(UserMixin, db.Model):
 
     @password.setter
     def password(self, password):
-        self.pass_secure = generate_password_hash(password)
+        self.password_hash = generate_password_hash(password)
 
     def verify_password(self,password):
-            return check_password_hash(self.pass_secure, password)
+        return check_password_hash(self.password_hash, password)
 
     def __repr__(self):
-        return f'User {self.username}'
+        return 'User {}'.format(self.username)
+    
 
 class Pitch(db.Model):
     '''
@@ -121,7 +121,7 @@ class Role(db.Model):
     users = db.relationship('User',backref = 'role',lazy="dynamic") 
 
     def __repr__(self):
-        return f'User {self.name}'  
+        return 'User {}'.format(self.name)  
 
 
 class PitchCategory(db.Model):

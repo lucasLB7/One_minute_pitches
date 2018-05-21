@@ -11,9 +11,9 @@ from .. import db
 def login():
     login_form = LoginForm()
     if login_form.validate_on_submit():
-        user = User.query.filter_by(email= login.email.data).first()
-        if user in not None and user.verify_password(login_form.password.data):
-            login_user(user,login_form.remember.data)
+        user = User.query.filter_by(email = login_form.email.data).first()
+        if user is not None and user.verify_password(login_form.password.data):
+            login_user(user,login_form.remember_me.data)
             return redirect(request.args.get('next') or url_for('main.index'))
         flash('Sorry wrong username or password')
 
@@ -32,7 +32,7 @@ def register():
         db.session.add(user)
         db.session.commit()
 
-        mail_message("Be inspired! One minute pitches!","email/welcome_user",user.email,user=user)
+       
 
 
         return redirect(url_for('auth.login'))

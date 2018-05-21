@@ -4,20 +4,20 @@ from wtforms.validators import Required,Email,EqualTo
 from ..models import User 
 
 
-class SignupForm(FlaskForm):
+class RegistrationForm(FlaskForm):
     username = StringField('Please enter your username...', validators=[Required()])
-    email = StringField('Please enter your email address...',validators=[Required(),email()])
+    email = StringField('Please enter your email address...',validators=[Required(),Email()])
     password = PasswordField('Please enter your password...',validators=[Required(),EqualTo('password_check',message='Please ensure passwords match')])
     password_check = PasswordField('Enter your password again...',validators=[Required()])
     submit = SubmitField('Confirm')
 
 
-    def check_email(self,data_field):
+    def validate_email(self,data_field):
         if User.query.filter_by(email = data_field.data).first():
             raise ValidationError('Email address already taken')
 
     
-    def check_name(self,data_field):
+    def validate_username(self,data_field):
         if User.query.filter_by(username = data_field.data).first():
             raise ValidationError('Sorry the username you chose seems to be taken already')
 
@@ -25,7 +25,7 @@ class SignupForm(FlaskForm):
 
 class LoginForm(FlaskForm):
     
-    email = StringField('Your email address...',validators=[Required(),email()])
+    email = StringField('Your email address...',validators=[Required(),Email()])
     password = PasswordField('Your password...',validators=[Required()])
     remember_me = BooleanField('Remember me')
     submit = SubmitField('Sign in')
