@@ -1,0 +1,18 @@
+@import url('https://fonts.googleapis.com/css?family=Dosis|Indie+Flower|Nunito');
+
+/* 
+
+font-family: 'Nunito', sans-serif;
+font-family: 'Dosis', sans-serif;
+font-family: 'Indie Flower', cursive; */
+
+
+.categories{
+    font-family: 'Indie Flower', cursive;
+    background-color: aqua;
+}
+
+.title {
+    font-family: 'Dosis', sans-serif;
+    size: 30px;
+}

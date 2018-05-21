@@ -3,7 +3,7 @@ from . import main
 from .forms import CommentsForm, UpdateProfile, PitchForm, UpvoteForm
 from ..models import Comment, Pitch, User 
 from flask_login import login_required, current_user
-from .. import db,photos
+from .. import db
 
 import markdown2
 
@@ -84,7 +84,7 @@ def search(pitch_name):
     View function to display the search results
     '''
     searched_pitches = search_pitch(pitch_name)
-    title = f'search results for {pitch_name}'
+    title = 'search results for {}'.format(pitch_name)
 
     return render_template('search.html',pitches = searched_pitches)
 
@@ -141,7 +141,7 @@ def update_pic(uname):
     user = User.query.filter_by(username = uname).first()
     if 'photo' in request.files:
         filename = photos.save(request.files['photo'])
-        path = f'photos/{filename}'
+        path = 'photos/{}'.format(filename)
         user.profile_pic_path = path 
         db.session.commit()
     return redirect(url_for('main.profile',uname=uname))
