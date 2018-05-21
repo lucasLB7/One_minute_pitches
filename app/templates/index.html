@@ -1,5 +1,6 @@
 {% extends 'base.html'%}
 {% import 'macros.html' as macro%}
+{% import 'bootstrap/wtf.html' as wtf %}
 
 {% block styles%}
 {{ super() }}
@@ -7,14 +8,14 @@
 {% endblock %}
 
 {% block content %}
-    <div class="container">
-        <div class="row" style="text-align:center; font-size:30px;">
-            <span class="title">PITCH-IT</span>
+    <div class = "container">
+        <div class="row">
+            <h1 class="title">PITCH-IT</h1>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3 col-xl-3"> 
                     <a href="{{url_for('main.interview')}}" class="categories">
                         <br>
-                        Inteview Pitches
+                        <h2>Inteview Pitches</h2>
                     </a>
                     <br>
                     <a href="{{url_for('main.pick_up_line')}}" style="font-family: 'Joti One', cursive; font-size:20px;">
@@ -34,13 +35,20 @@
                     <br>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-9 col-lg-9 col-xl-9">
-            <div class="panel style="style="border: 3px solid #f2f2f2; padding:20px; margin-top:10px;">
+            <div class="panel">
                 <p style="font-family: 'Bellefair', serif; font-size:20px;">Write your one minute in any of the categories to the left and let other user vote and comment on it.Please also feel free to comment and vote on pitches posted by other people </p>
                 
                 <div style="text-align:center;">
                     <a href="{{url_for('main.new_pitch')}}">
                         <br>
-                        <span >Add a new Pitch</span>
+                        <div class="container">
+                            <a href="{{url_for('main.index')}}">
+                                    <button type="button" class="btn btn-primary btn-sm" style="margin-bottom:10px;">
+                                            <span class="glyphicon glyphicon-chevron-left" ></span> Back
+                                    </button>
+                            </a>
+                            {{wtf.quick_form(new_pitch_form)}}
+                        </div>
                     </a>
 
                 </div>

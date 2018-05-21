@@ -4,7 +4,7 @@ from wtforms import StringField,TextAreaField,SubmitField, SelectField, RadioFie
 from wtforms.validators import Required
 
 class CommentsForm(FlaskForm):
-    comment = TextAreaField('Comment', validators=[Required()])
+    comment = TextAreaField('What do you think about this pitch?', validators=[Required()])
     vote=RadioField('default field arguments', choices=[('1', 'UpVote'), ('1', 'DownVote')])
     submit = SubmitField('SUBMIT')  
 
@@ -13,13 +13,11 @@ class UpdateProfile(FlaskForm):
     submit = SubmitField('Submit') 
 
 class PitchForm(FlaskForm):
-    category_id = SelectField('Select Category', choices=[('1', 'Interview'), ('2', 'Pick Up Lines'), ('3', 'Promotion'),('4','Product')])
+    category_id = SelectField('Select Category', choices=[('1', 'Creative Ideas'), ('2', 'Funny Stories'), ('3', 'Motivational speeches'),('4','Business ideas')])
     content = TextAreaField('YOUR PITCH')
     submit = SubmitField('Create Pitch')
 
 class UpvoteForm(FlaskForm):
-    '''
-    Class to create a wtf form for upvoting a pitch
-    '''
+
     submit = SubmitField('Upvote')
     
