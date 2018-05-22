@@ -23,7 +23,7 @@ def Creative_Ideas():
   
     pitches= Pitch.get_all_pitches()
     title = 'PITCH-IT Creative Ideas'  
-    return render_template('interview.html', title = title, pitches= pitches )
+    return render_template('creative_ideas.html', title = title, pitches= pitches )
 
 @main.route('/pick_up_lines/pitches/')
 def Funny_Stories():
