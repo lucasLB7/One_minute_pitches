@@ -3,63 +3,58 @@
 {% import 'bootstrap/wtf.html' as wtf %}
 
 {% block content %}
+
+
+
     <div class = "container main_page">
         <div class="row">
-            <h1 class="title">Pitch It</h1>
+                <img src="{{url_for('static', filename='images/logo_main.png', width=20)}}" />
+
             <h2 class="medium-styled-text">Inspiration CAN be shared...</h2>
 
-        <div class="col-md-3 bordered"> 
-            <h1>Browse Pitches:</h1>
-                    <a href="{{url_for('main.Creative_Ideas')}}" class="categories">
-                        <br>
-                        <h2>Creative Ideas</h2>
-                    </a>
-                    <br>
-                    <a href="{{url_for('main.Funny_Stories')}}" class="categories">
-                        <br>
-                        <h2>Funny Stories</h2>
-                    </a>
-                    <br>
-                    <a href="{{url_for('main.Motivational_Speeches')}}" class="categories">
-                        <br>
-                        <h2>Motivational Speeches</h2>  
-                    </a>
-                    <br>
-                    <a href="{{url_for('main.Business_Ideas')}}" class="categories">
-                        <br>
-                        <h2>Business Ideas</h2>
-                    </a>
-                    <br>
-        </div>
-        <div class="col-md-9">
+
             <div class="jumbotron">
-                <p>Create you one minute pitch! Remember, keep it short and true..</p>
+                <p>Speak your soul...</p>
                 <div>
                     <a href="{{url_for('main.new_pitch')}}">
                         <h3>Create a new Pitch..</h3></a>
-
-                        <br>
-                        <div class="container">
-                            <a href="{{url_for('main.index')}}">
-                                    <button type="button" class="btn btn-primary btn-sm">
-                                            <span class="glyphicon glyphicon-chevron-left" ></span> Back
-                                    </button>
-                            </a>
-                          
+                           
                         </div>
                 </div>
-            
-            </div>
-            
+            </div>        
         </div>
         </div>
     </hr>
+    <div class="well">
         <div class="all-pitches">
-            <span style="color:gainsboro;">View Pitches</span>
+                <div class="dropdown">
+                        <button class="dropbtn">Pitch Categories</button>
+                        <div class="dropdown-content">
+                                <a href="{{url_for('main.Creative_Ideas')}}" class="categories">
+                                        <br>
+                                        <h2>Creative Ideas</h2>
+                                    </a>
+                                <a href="{{url_for('main.Funny_Stories')}}" class="categories">
+                                        <br>
+                                        <h2>Funny Stories</h2>
+                                    </a>
+                                <a href="{{url_for('main.Motivational_Speeches')}}" class="categories">
+                                        <br>
+                                        <h2>Motivational Speeches</h2>  
+                                    </a>
+                                <a href="{{url_for('main.Business_Ideas')}}" class="categories">
+                                        <br>
+                                        <h2>Business Ideas</h2>
+                                    </a>
+                
+                        </div>
+                        </div>
                 <hr> 
+                <div class="center">
                 {{macro.displayPitches(pitches)}}
-            
+                </div>
 
+        </div>
         </div>
 
     </div>
