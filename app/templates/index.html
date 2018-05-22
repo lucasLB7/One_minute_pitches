@@ -8,13 +8,12 @@
 
     <div class = "container main_page">
         <div class="row">
-                <img src="{{url_for('static', filename='images/logo_main.png', width=20)}}" />
+                <img src="{{url_for('static', filename='images/logo_main.png', width=20)}}"/>
 
             <h2 class="medium-styled-text">Inspiration CAN be shared...</h2>
 
 
-            <div class="jumbotron">
-                <p>Speak your soul...</p>
+            <div class="jumbotron my_tron">
                 <div>
                     <a href="{{url_for('main.new_pitch')}}">
                         <h3>Create a new Pitch..</h3></a>
@@ -29,6 +28,7 @@
         <div class="all-pitches">
                 <div class="dropdown">
                         <button class="dropbtn">Pitch Categories</button>
+                        
                         <div class="dropdown-content">
                                 <a href="{{url_for('main.Creative_Ideas')}}" class="categories">
                                         <br>
@@ -51,7 +51,10 @@
                         </div>
                 <hr> 
                 <div class="center">
+                    <h2>LATEST PITCHES</h2>
+                    <div class="well">
                 {{macro.displayPitches(pitches)}}
+                </div>
                 </div>
 
         </div>
