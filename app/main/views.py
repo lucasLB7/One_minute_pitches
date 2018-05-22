@@ -4,7 +4,6 @@ from .forms import CommentsForm, UpdateProfile, PitchForm, UpvoteForm
 from ..models import Comment, Pitch, User 
 from flask_login import login_required, current_user
 from .. import db
-
 import markdown2
 
 
@@ -14,7 +13,8 @@ def index():
     '''
     View root page function that returns the index page and its data
     '''
-    title = 'Home - Welcome to The best Pitching Website Online'
+
+    title = 'PITCH-IT--HOME'
 
     search_pitch = request.args.get('pitch_query')
     pitches= Pitch.get_all_pitches()  
@@ -24,31 +24,31 @@ def index():
 #this section consist of the category root functions
 
 @main.route('/inteview/pitches/')
-def interview():
+def Creative_Ideas():
     '''
     View root page function that returns the index page and its data
     '''
     pitches= Pitch.get_all_pitches()
-    title = 'Home - Welcome to The best Pitching Website Online'  
+    title = 'PITCH-IT Creative Ideas'  
     return render_template('interview.html', title = title, pitches= pitches )
 
 @main.route('/pick_up_lines/pitches/')
-def pick_up_line():
+def Funny_Stories():
     '''
     View root page function that returns the index page and its data
     '''
-    title = 'Pick Up Lines'
+    title = 'PITCH-IT Funny Stories'
 
     pitches= Pitch.get_all_pitches()
 
     return render_template('pick_up_lines.html', title = title, pitches= pitches )
 
 @main.route('/promotion/pitches/')
-def promotion():
+def Motivational_Speeches():
     '''
     View root page function that returns the index page and its data
     '''
-    title = 'Promotion Pitches'
+    title = 'PITCH-IT Motivational Speeches'
 
     pitches= Pitch.get_all_pitches()
 
@@ -56,11 +56,11 @@ def promotion():
 
 
 @main.route('/product/pitches/')
-def product():
+def Business_Ideas():
     '''
     View root page function that returns the index page and its data
     '''
-    title = 'Product Pitches'
+    title = 'PITCH-IT Business Ideas'
     pitches= Pitch.get_all_pitches()
     return render_template('product.html', title = title, pitches= pitches )
  
@@ -112,9 +112,7 @@ def new_pitch():
 
 @main.route('/category/<int:id>')
 def category(id):
-    '''
-    function that returns pitches based on the entered category id
-    '''
+  
     category = PitchCategory.query.get(id)
 
     if category is None:

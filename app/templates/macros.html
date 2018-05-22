@@ -4,8 +4,8 @@
       <div class="panel">
           <p>{{pitch.pitch}}</p>
           <br>
-          <a href="{{url_for('main.new_comment',id=pitch.id)}}">Add a Comment</a>&nbsp;&nbsp;|
-          <a href="{{url_for('main.view_comments',id=pitch.id)}}">View Comments</a>&nbsp;&nbsp;|
+          <a href="{{url_for('main.new_comment',id=pitch.id)}}">Give us your thoughts..</a>&nbsp;&nbsp;|
+          <a href="{{url_for('main.view_comments',id=pitch.id)}}">More comments..</a>&nbsp;&nbsp;|
           <a href="{{url_for('main.new_comment',id=pitch.id)}}">Vote</a>
       </div> 
     {% endfor %}
