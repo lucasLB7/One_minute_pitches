@@ -10,13 +10,10 @@ import markdown2
 
 @main.route('/')
 def index():
-
-
     title = 'PITCH-IT--HOME'
 
     search_pitch = request.args.get('pitch_query')
     pitches= Pitch.get_all_pitches()  
-
     return render_template('index.html', title = title, pitches= pitches)
 
 #this section consist of the category root functions
@@ -139,7 +136,7 @@ def profile(uname):
     user = User.query.filter_by(username = uname).first()
 
     if user is None:
-        abort(404)
+        return render_template('fourOwFour.html1')
 
     return render_template("profile/profile.html", user = user)
 
