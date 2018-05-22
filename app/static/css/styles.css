@@ -76,10 +76,10 @@ font-family: 'Indie Flower', cursive; */
 
 .dropdown-content a {
     color: black;
-    padding: 12px 16px;
+    padding: 5px 8px;
     text-decoration: none;
     display: block;
-    size: 15px;
+    size: 5px;
 }
 
 .dropdown-content a:hover {background-color: #f1f1f1}
@@ -94,5 +94,10 @@ font-family: 'Indie Flower', cursive; */
 
 
 .center{
-    text-align: center
+    text-align: center;
+    background-color: orange;
+}
+
+.my_tron{
+    background-image: url(../images/background_image.png)
 }
