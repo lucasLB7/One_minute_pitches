@@ -1,4 +1,3 @@
-
 from flask_wtf import FlaskForm
 from wtforms.validators import Required
 from wtforms import StringField,TextAreaField,SubmitField, SelectField, RadioField

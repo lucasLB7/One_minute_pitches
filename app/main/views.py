@@ -51,7 +51,7 @@ def Business_Ideas():
     '''
     title = 'PITCH-IT Business Ideas'
     pitches= Pitch.get_all_pitches()
-    return render_template('product.html', title = title, pitches= pitches )
+    return render_template('businessIdeas.html', title = title, pitches= pitches )
  
 #  end of category root functions
 
@@ -80,15 +80,13 @@ def search(pitch_name):
 def new_pitch():
   
     form = PitchForm()
-
-
     if category is None:
         abort( 404 )
 
     if form.validate_on_submit():
         pitch= form.content.data
         category_id = form.category_id.data
-        new_pitch= Pitch(pitch= pitch, category_id= category_id)
+        new_pitch= Pitch(pitch= pitch, category_id = category_id)
 
         new_pitch.save_pitch()
         return redirect(url_for('main.index'))
