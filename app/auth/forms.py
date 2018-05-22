@@ -9,6 +9,7 @@ class RegistrationForm(FlaskForm):
     email = StringField('Please enter your email address...',validators=[Required(),Email()])
     password = PasswordField('Please enter your password...',validators=[Required(),EqualTo('password_check',message='Please ensure passwords match')])
     password_check = PasswordField('Enter your password again...',validators=[Required()])
+    terms = BooleanField('I have read and agree to the TERMS and CONDITIONS')
     submit = SubmitField('Confirm')
 
 

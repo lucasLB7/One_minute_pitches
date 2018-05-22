@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Dosis|Indie+Flower|Nunito');
+@import url('https://fonts.googleapis.com/css?family=Amatic+SC|Dosis|Homemade+Apple|Indie+Flower|Nunito|Pacifico');
 
 /* 
 
@@ -8,11 +8,11 @@ font-family: 'Indie Flower', cursive; */
 
 
 .categories{
-    font-family: 'Indie Flower', cursive;
+    font-family: 'Dosis', sans-serif;
 }
 
 .title {
-    font-family: 'Dosis', sans-serif;
+    font-family: 'Homemade Apple', cursive;
     size: 30px;
     text-align: center;
 }
@@ -36,5 +36,10 @@ font-family: 'Indie Flower', cursive; */
 }
 
 .bordered{
-    border: 2px solid blue;
+    border: 8px solid orange;
+}
+
+.medium-styled-text {
+    font-family: 'Pacifico', cursive;
+
 }
