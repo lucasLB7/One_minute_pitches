@@ -10,9 +10,7 @@ import markdown2
 
 @main.route('/')
 def index():
-    '''
-    View root page function that returns the index page and its data
-    '''
+
 
     title = 'PITCH-IT--HOME'
 
@@ -25,18 +23,14 @@ def index():
 
 @main.route('/inteview/pitches/')
 def Creative_Ideas():
-    '''
-    View root page function that returns the index page and its data
-    '''
+  
     pitches= Pitch.get_all_pitches()
     title = 'PITCH-IT Creative Ideas'  
     return render_template('interview.html', title = title, pitches= pitches )
 
 @main.route('/pick_up_lines/pitches/')
 def Funny_Stories():
-    '''
-    View root page function that returns the index page and its data
-    '''
+
     title = 'PITCH-IT Funny Stories'
 
     pitches= Pitch.get_all_pitches()
@@ -45,9 +39,7 @@ def Funny_Stories():
 
 @main.route('/promotion/pitches/')
 def Motivational_Speeches():
-    '''
-    View root page function that returns the index page and its data
-    '''
+   
     title = 'PITCH-IT Motivational Speeches'
 
     pitches= Pitch.get_all_pitches()
@@ -69,9 +61,7 @@ def Business_Ideas():
 @main.route('/pitch/<int:pitch_id>')
 def pitch(pitch_id):
 
-    '''
-    View pitch page function that returns the pitch details page and its data
-    '''
+  
     found_pitch= get_pitch(pitch_id)
     title = pitch_id
     pitch_comments = Comment.get_comments(pitch_id)
@@ -80,20 +70,18 @@ def pitch(pitch_id):
 
 @main.route('/search/<pitch_name>')
 def search(pitch_name):
-    '''
-    View function to display the search results
-    '''
+  
     searched_pitches = search_pitch(pitch_name)
     title = 'search results for {}'.format(pitch_name)
 
     return render_template('search.html',pitches = searched_pitches)
 
+
+
 @main.route('/pitch/new/', methods = ['GET','POST'])
 @login_required
 def new_pitch():
-    '''
-    Function that creates new pitches
-    '''
+  
     form = PitchForm()
 
 
@@ -133,6 +121,8 @@ def new_comment(id):
     #title = f'{pitch_result.id} review'
     return render_template('new_comment.html',comment_form=form, vote_form= vote_form)
 
+
+
 @main.route('/user/<uname>/update/pic',methods= ['POST'])
 @login_required
 def update_pic(uname):
@@ -171,6 +161,8 @@ def update_profile(uname):
         return redirect(url_for('.profile',uname=user.username))
     
     return render_template('profile/update.html',form =form)
+
+
 
 @main.route('/view/comment/<int:id>')
 def view_comments(id):

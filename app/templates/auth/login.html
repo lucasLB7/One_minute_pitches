@@ -5,11 +5,13 @@
 
 <div class="container">
   <div class="row">
+      <h1>PITCH-IT</h1>
+      <h3>Log in to your account..</h3>
 
     <div class="col-md-2"> </div>
 
     <div class="col-md-8">
-      <!-- Flash message -->
+
       {% for message in get_flashed_messages() %}
           <div class="alert alert-danger">
           <button type="button" class="close" data-dismiss="alert">&times;</button>
@@ -21,7 +23,9 @@
 
       {{ wtf.quick_form(login_form) }}
 
-      <p> Don't  have an account?  <a href="{{url_for('auth.register')}}">Sign up here</a></p>
+      <div class="well">
+      <p> Don't  have an account?  <a href="{{url_for('auth.register')}}">Register with us..</a></p>
+      </div>
 
     </div>
 

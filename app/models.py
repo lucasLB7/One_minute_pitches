@@ -32,7 +32,7 @@ class User(UserMixin, db.Model):
 
     @property
     def password(self):
-        raise AttributeError('You cannot read the password attribute')
+        raise AttributeError('Looks like you cant see this')
 
         
 
