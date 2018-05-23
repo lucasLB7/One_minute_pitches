@@ -9,11 +9,12 @@ import markdown2
 
 
 @main.route('/')
+@login_required
 def index():
     title = 'PITCH-IT--HOME'
 
     search_pitch = request.args.get('pitch_query')
-    pitches= Pitch.get_all_pitches()  
+    pitches= Pitch.get_all_pitches() 
     return render_template('index.html', title = title, pitches= pitches)
 
 #this section consist of the category root functions
