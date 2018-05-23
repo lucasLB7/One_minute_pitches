@@ -44,39 +44,37 @@ WTForms
 Clone from git hub repository:
 In dev phases USE this branch TRY.
 
-clone the following repository: **https://github.com/lucasLB7/One_minute_pitches/tree/TRY--templatesSwitchUp**
+
+First, install python pip:
+```
+curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
+```
+
+-clone the following repository: **https://github.com/lucasLB7/One_minute_pitches/tree/TRY--templatesSwitchUp**
 
 Once cloned I would advice setting up a virtual environment using **virtualenv**.
+Then run the virtual environment using:
+
+```
+source (name of virtual env)/bin/activate
+```
+
 
 ## Running the tests
 
-Explain how to run the automated tests for this system
+
 
 ### Break down into end to end tests
 
-Explain what these tests test and why
 
-```
-Give an example
-```
 
-### And coding style tests
 
-Explain what these tests test and why
-
-```
-Give an example
-```
-
-## Deployment
-
-Add additional notes about how to deploy this on a live system
 
 ## Built With
 
-* [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - The web framework used
-* [Maven](https://maven.apache.org/) - Dependency Management
-* [ROME](https://rometools.github.io/rome/) - Used to generate RSS Feeds
+* [python](https://www.python.org/) - Logic language
+* [flask](http://flask.pocoo.org/) - Framework for python
+* [SQLAlchemy](https://www.sqlalchemy.org/) - Used to generate database
 
 ## Contributing
 
@@ -88,7 +86,7 @@ We use [SemVer](http://semver.org/) for versioning. For the versions available, 
 
 ## Authors
 
-* **Billie Thompson** - *Initial work* - [PurpleBooth](https://github.com/PurpleBooth)
+* **Lucas Lambert** - *Initial work* - [pitchit](https://github.com/PurpleBooth)
 
 See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
 
@@ -98,6 +96,7 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 
 ## Acknowledgments
 
-* Hat tip to anyone who's code was used
-* Inspiration
-* etc
+* Moringa instructure
+* Flask documentation
+* Google
+
