@@ -36,9 +36,6 @@ SQLAlchemy
 Werkzeug
 WTForms
 
-
-
-
 ### Installing
 
 Clone from git hub repository:
@@ -58,16 +55,35 @@ Then run the virtual environment using:
 ```
 source (name of virtual env)/bin/activate
 ```
+After activating the virtual env, you need to make sure all dependancies are installed:
+
+run in command prompt:
+
+```
+pip3 install (name of Prerequisites)
+```
+
+Install the above mentioned Prerequisites following the pip install model.
+
+Finally, run the app localy by using the command:
+```
+python3 manage.py server
+```
+__this will launch a local server__ you can visit the app on: __localhost:5000__
+
+
+
+## app expectations:
+
+-On visiting the site you are redrected to a log in form. If you are not registered follow the link to the register page.
+- Once you have registered you can now log in and access the main page.
+
+On this page you can create new pitches & comment/like the pitches..
+
+
 
 
 ## Running the tests
-
-
-
-### Break down into end to end tests
-
-
-
 
 
 ## Built With
@@ -78,11 +94,13 @@ source (name of virtual env)/bin/activate
 
 ## Contributing
 
-Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
+If you notice any bugs or errors in the app, please contact me on:
+- plucaslambert@gmail.com
+
 
 ## Versioning
 
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags). 
+I used [Github](http://github.com/) for versioning.  
 
 ## Authors
 
