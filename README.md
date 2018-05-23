@@ -20,29 +20,33 @@ Installing dependancies & requirements to run this app:
 
 ### Prerequisites
 
-What things you need to install the software and how to install them
+alembic
+Flask
+Flask-Bootstrap
+Flask-Login
+Flask-Mail
+flask-markdown2
+Flask-Migrate
+Flask-Script
+Flask-SimpleMDE
+Flask-SQLAlchemy
+Flask-WTF
+psycopg2
+SQLAlchemy
+Werkzeug
+WTForms
 
-```
-Give examples
-```
+
+
 
 ### Installing
 
-A step by step series of examples that tell you have to get a development env running
+Clone from git hub repository:
+In dev phases USE this branch TRY.
 
-Say what the step will be
+clone the following repository: **https://github.com/lucasLB7/One_minute_pitches/tree/TRY--templatesSwitchUp**
 
-```
-Give the example
-```
-
-And repeat
-
-```
-until finished
-```
-
-End with an example of getting some data out of the system or using it for a little demo
+Once cloned I would advice setting up a virtual environment using **virtualenv**.
 
 ## Running the tests
 
